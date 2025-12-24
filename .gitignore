@@ -1,0 +1,53 @@
+# =========================
+# AVR build artifacts
+# =========================
+
+# Object files
+*.o
+
+# Executables / firmware
+*.elf
+*.hex
+*.eep
+*.lss
+*.map
+
+# Dependency files
+*.d
+
+# Temporary assembler files
+*.s
+*.lst
+
+# =========================
+# Build directories
+# =========================
+
+build/
+dist/
+out/
+
+# =========================
+# macOS system files
+# =========================
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# =========================
+# Editor / IDE files
+# =========================
+
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# =========================
+# AVRDUDE / toolchain logs
+# =========================
+
+avrdude.log
