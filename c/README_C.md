@@ -94,7 +94,7 @@ avrdude -v
 
 ## Source Code
 
-**`main.c`**
+**`samplefile.c`**
 
 Key functions:
 - `uart_init()` – configure UART hardware
@@ -116,8 +116,8 @@ avr-gcc \
   -DF_CPU=16000000UL \
   -Os \
   -Wall \
-  -o main.elf \
-  main.c
+  -o samplefile.elf \
+  samplefile.c
 ```
 
 ### Why these flags?
@@ -134,10 +134,10 @@ avr-gcc \
 ## Convert to HEX
 
 ```bash
-avr-objcopy -O ihex main.elf main.hex
+avr-objcopy -O ihex samplefile.elf samplefile.hex
 ```
 
-`main.hex` is what gets flashed to the chip.
+`samplefile.hex` is what gets flashed to the chip.
 
 ---
 
@@ -146,13 +146,13 @@ avr-objcopy -O ihex main.elf main.hex
 ### USBasp
 
 ```bash
-avrdude -c usbasp -p m328p -B 10 -U flash:w:main.hex
+avrdude -c usbasp -p m328p -B 10 -U flash:w:samplefile.hex
 ```
 
 ### Arduino as ISP
 
 ```bash
-avrdude -c arduino -p m328p -P /dev/tty.usbserial-XXXX -b 19200 -U flash:w:main.hex
+avrdude -c arduino -p m328p -P /dev/tty.usbserial-XXXX -b 19200 -U flash:w:samplefile.hex
 ```
 
 (Replace `XXXX` with your serial port.)

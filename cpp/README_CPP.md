@@ -95,7 +95,7 @@ avrdude -v
 
 ## Source Code
 
-**`main.cpp`**
+**`samplefile.cpp`**
 
 Key components:
 - `class UART`
@@ -120,8 +120,8 @@ avr-g++ \
   -Wall \
   -fno-exceptions \
   -fno-rtti \
-  -o main.elf \
-  main.cpp
+  -o samplefile.elf \
+  samplefile.cpp
 ```
 
 ### Why these flags?
@@ -140,10 +140,10 @@ avr-g++ \
 ## Convert to HEX
 
 ```bash
-avr-objcopy -O ihex main.elf main.hex
+avr-objcopy -O ihex samplefile.elf samplefile.hex
 ```
 
-`main.hex` is what gets flashed to the chip.
+`samplefile.hex` is what gets flashed to the chip.
 
 ---
 
@@ -152,13 +152,13 @@ avr-objcopy -O ihex main.elf main.hex
 ### USBasp
 
 ```bash
-avrdude -c usbasp -p m328p -B 10 -U flash:w:main.hex
+avrdude -c usbasp -p m328p -B 10 -U flash:w:samplefile.hex
 ```
 
 ### Arduino as ISP
 
 ```bash
-avrdude -c arduino -p m328p -P /dev/tty.usbserial-XXXX -b 19200 -U flash:w:main.hex
+avrdude -c arduino -p m328p -P /dev/tty.usbserial-XXXX -b 19200 -U flash:w:samplefile.hex
 ```
 
 (Replace `XXXX` with your serial port.)

@@ -56,7 +56,7 @@ avrdude -v
 
 ## Source File
 
-**`main.asm`**  
+**`samplefile.asm`**  
 (Uses pure GNU AVR assembly — no preprocessor)
 
 Key features:
@@ -71,13 +71,13 @@ Key features:
 ## Compile
 
 ```bash
-avr-gcc -mmcu=atmega328p -x assembler -o main.elf main.asm
-avr-objcopy -O ihex main.elf main.hex
+avr-gcc -mmcu=atmega328p -x assembler -o samplefile.elf samplefile.asm
+avr-objcopy -O ihex samplefile.elf samplefile.hex
 ```
 
 Output:
-- `main.elf` – linked ELF
-- `main.hex` – flashable image
+- `samplefile.elf` – linked ELF
+- `samplefile.hex` – flashable image
 
 ---
 
@@ -85,12 +85,12 @@ Output:
 
 ### USBasp
 ```bash
-avrdude -c usbasp -p m328p -B 10 -U flash:w:main.hex
+avrdude -c usbasp -p m328p -B 10 -U flash:w:samplefile.hex
 ```
 
 ### Arduino as ISP
 ```bash
-avrdude -c arduino -p m328p -P /dev/tty.usbserial-XXXX -b 19200 -U flash:w:main.hex
+avrdude -c arduino -p m328p -P /dev/tty.usbserial-XXXX -b 19200 -U flash:w:samplefile.hex
 ```
 
 ---
