@@ -88,9 +88,6 @@ main:
     ldi ZL, lo8(hello_str)
     rcall uart_send_string
 
-loop:
-    rjmp loop
-
 ; =========================
 ; String in FLASH
 ; =========================
