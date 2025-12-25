@@ -102,8 +102,6 @@ main:
     ; ---- LOAD FLASH ADDRESS (WORD → BYTE) ----
     ldi ZL, lo8(lorem)
     ldi ZH, hi8(lorem)
-    lsl ZL
-    rol ZH
 
     ; SRAM destination
     ldi XL, lo8(lorem_buf)
@@ -122,12 +120,12 @@ loop:
 ; -------------------------
 .p2align 1
 lorem:
-    .asciz "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\r\n\
-Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\r\n\
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.\r\n\
-Duis aute irure dolor in reprehenderit in voluptate velit esse.\r\n\
-Excepteur sint occaecat cupidatat non proident.\r\n\
-Sunt in culpa qui officia deserunt mollit anim id est laborum.\r\n"
+    .ascii "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\r\n"
+    .ascii "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\r\n"
+    .ascii "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.\r\n"
+    .ascii "Duis aute irure dolor in reprehenderit in voluptate velit esse.\r\n"
+    .ascii "Excepteur sint occaecat cupidatat non proident.\r\n"
+    .asciz "Sunt in culpa qui officia deserunt mollit anim id est laborum.\r\n"
 
 ; -------------------------
 ; SRAM buffer
