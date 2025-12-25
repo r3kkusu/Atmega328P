@@ -120,12 +120,12 @@ loop:
 ; -------------------------
 .p2align 1
 lorem:
-    .ascii "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\r\n"
-    .ascii "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\r\n"
-    .ascii "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.\r\n"
-    .ascii "Duis aute irure dolor in reprehenderit in voluptate velit esse.\r\n"
-    .ascii "Excepteur sint occaecat cupidatat non proident.\r\n"
-    .asciz "Sunt in culpa qui officia deserunt mollit anim id est laborum.\r\n"
+    .ascii "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n"
+    .ascii "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n"
+    .ascii "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.\n"
+    .ascii "Duis aute irure dolor in reprehenderit in voluptate velit esse.\n"
+    .ascii "Excepteur sint occaecat cupidatat non proident.\n"
+    .asciz "Sunt in culpa qui officia deserunt mollit anim id est laborum.\n"
 
 ; -------------------------
 ; SRAM buffer
@@ -133,3 +133,4 @@ lorem:
 .section .bss
 lorem_buf:
     .skip 512
+    
